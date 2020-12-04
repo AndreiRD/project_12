@@ -1,0 +1,9 @@
+.popup__image-large {
+/*  width:80vw;
+  height:80vh;*/
+  background-size: cover;
+  position:relative;
+  max-width: 80vw;
+  max-height: 80vh;
+  margin:0 auto;
+}
