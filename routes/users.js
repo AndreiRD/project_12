@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     })
 
       .catch(err => {
-      res.status(404).json({message: 'Ошибка при чтении файла'})
+      res.status(500).json({message: 'Ошибка при чтении файла'})
     })
 
 });
