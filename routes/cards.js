@@ -3,15 +3,14 @@ const fs = require('fs').promises; // данные нужны для роути�
 
 cards.get('/', (req, res) => {
   fs.readFile('data/cards.json', 'utf-8')
-    .then(data => {
-      data = JSON.parse(data);
-      res.status(200).json(data);
+    .then((data) => {
+      const filedata = JSON.parse(data);
+      res.status(200).json(filedata);
     })
 
-      .catch(err => {
-      res.status(404).json({message: 'Ошибка при чтении файла'})
-    })
-
+    .catch(() => {
+      res.status(500).json({ message: 'Ошибка при чтении файла' });
+    });
 });
 
 module.exports = cards; // экспортировали роутер
